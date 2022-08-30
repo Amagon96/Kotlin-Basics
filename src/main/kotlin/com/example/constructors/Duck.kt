@@ -1,6 +1,6 @@
-package com.example.inheritance
+package com.example.constructors
 
-class Duck(name: String): Animal() {
+class Duck(name: String) {
     //If you want the constructor parameter to be accessible outside the class body
     // define it as a var or val in the parameter list
     // Otherwise the parameter will be only usable on property initializers and initializer blocks declared in the class body
@@ -11,7 +11,7 @@ class Duck(name: String): Animal() {
     init {
         println("First initializer block that prints $name")
     }
-    override fun greeting() = "I'm $duckName the duck!"
+    fun greeting() = "I'm $duckName the duck!"
 }
 
 fun main() {

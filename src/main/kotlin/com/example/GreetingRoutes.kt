@@ -1,6 +1,6 @@
 package com.example
 
-import com.example.inheritance.Duck
+import com.example.constructors.Duck
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 
