@@ -3,7 +3,9 @@ package com.example.school
 open class Person(name: String, ssn: Number) {
     //Encapsulation is the art of hiding important information from other classes
     // and exposing them only through a select method
+    // TODO: Protected
     private val personName = name
+    private val lastName = name
     private var personSSN = ssn
 
     open fun getPersonName(): String {

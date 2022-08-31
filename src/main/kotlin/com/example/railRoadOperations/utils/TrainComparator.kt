@@ -18,7 +18,7 @@ class TrainComparator {
         "Old Dominion" to 2
     )
 
-    fun sortTrains(trains: ArrayList<Train>): ArrayList<Train> {
+    fun sortTrains(trains: ArrayList<Train>): List<Train> {
         val destinationComparator = Comparator { o1: Train, o2: Train ->
 
             if (!destinations.containsKey(o1.destination) || !receivers.containsKey(o1.receiver)){
@@ -27,14 +27,10 @@ class TrainComparator {
                 return@Comparator -1
             }
 
-            if (o1.destination == o2.destination)
-                return@Comparator receivers[o1.receiver]!! - receivers[o2.receiver]!!
-            else
-                return@Comparator destinations[o1.destination]!! - destinations[o2.destination]!!
+            return@Comparator if (o1.destination == o2.destination) receivers[o1.receiver]!! - receivers[o2.receiver]!!
+            else destinations[o1.destination]!! - destinations[o2.destination]!!
         }
 
-        val copy = arrayListOf<Train>().apply { addAll(trains) }
-        copy.sortWith(destinationComparator)
-        return copy
+        return trains.sortedWith(destinationComparator)
     }
 }
